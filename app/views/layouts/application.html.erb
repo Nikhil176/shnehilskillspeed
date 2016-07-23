@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Shnehilskillspeed</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+<div class="container">
+ <ul class="nav nav-tabs">
+	<li><%= link_to "Home", welcome_Home_path %></li>
+	<li><%= link_to "Courses", welcome_Courses_path %></li>
+	<li><%= link_to "How it works", welcome_How_it_works_path %></li>
+	<li><%= link_to "Corporates", welcome_Corporates_path %></li>
+	<li><%= link_to "Blog", welcome_Blog_path %></li>
+	<li><%= link_to "Invoices", invoices_path %></li>
+	<li><%= link_to "Login", root_path %></li>
+ </ul>
+
+    <%= yield %>
+
+</div>  
+
+</body>
+</html>
