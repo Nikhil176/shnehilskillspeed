@@ -1,47 +1,63 @@
-<%= form_for(invoice) do |f| %>
-  <% if invoice.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(invoice.errors.count, "error") %> prohibited this invoice from being saved:</h2>
+<div class="row">
+	<%= form_for invoice, html: {class: 'form-horizontal'} do |f| %>
+	  <% if invoice.errors.any? %>
+	    <div id="error_explanation">
+	      <h2><%= pluralize(invoice.errors.count, "error") %> prohibited this invoice from being saved:</h2>
 
-      <ul>
-      <% invoice.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+	      <ul>
+	      <% invoice.errors.full_messages.each do |message| %>
+		<li><%= message %></li>
+	      <% end %>
+	      </ul>
+	    </div>
+	  <% end %>
 
-  <div class="field">
-    <%= f.label :Name %>
-    <%= f.text_field :Name %>
-  </div>
+	  <div class="control-group">
+	    <%= f.label :Name, class: 'control-label' %>
+            <div class="controls">
+	     <%= f.text_field :Name %>
+           </div>
+	  </div>
 
-  <div class="field">
-    <%= f.label :Date %>
-    <%= f.datetime_select :Date %>
-  </div>
+	  <div class="control-group">
+	    <%= f.label :Date, class: 'control-label' %>
+            <div class="controls">
+	     <%= f.date_select :Date %>
+            </div>	  
+          </div>
 
-  <div class="field">
-    <%= f.label :Course %>
-    <%= f.text_field :Course %>
-  </div>
+	  <div class="control-group">
+	    <%= f.label :Course, class: 'control-label' %>
+	    <div class="controls">
+             <%= f.text_field :Course %>
+            </div>
+	  </div>
 
-  <div class="field">
-    <%= f.label :Price %>
-    <%= f.text_field :Price %>
-  </div>
+	  <div class="control-group">
+	    <%= f.label :Price, class: 'control-label' %>
+            <div class="controls">
+	     <%= f.text_field :Price %>
+            </div>
+	  </div>
 
-  <div class="field">
-    <%= f.label :Address %>
-    <%= f.text_field :Address %>
-  </div>
+	  <div class="control-group">
+	    <%= f.label :Address, class: 'control-label' %>
+            <div class="controls">
+	     <%= f.text_field :Address %>
+            </div>
+	  </div>
 
-  <div class="field">
-    <%= f.label :Phone %>
-    <%= f.text_field :Phone %>
-  </div>
+	  <div class="control-group">
+	    <%= f.label :Phone, class: 'control-label' %>
+            <div class="controls">
+	     <%= f.text_field :Phone %>
+            </div>
+	  </div>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+	  <div class="control-group">
+           <div class="controls">
+	    <%= f.submit 'Submit', class: 'btn btn-default' %>
+           </div>
+	  </div>
+	<% end %>
+</div>
