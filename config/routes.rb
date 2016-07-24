@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :sales_teams
   resources :courses do
    collection {post :import }
   end

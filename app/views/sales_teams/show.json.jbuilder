@@ -1,0 +1,1 @@
+json.partial! "sales_teams/sales_team", sales_team: @sales_team

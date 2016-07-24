@@ -7,7 +7,7 @@ class CreateInvoices < ActiveRecord::Migration[5.0]
       t.decimal :Price
       t.string :Address
       t.decimal :Phone
-
+  
       t.timestamps
     end
   end

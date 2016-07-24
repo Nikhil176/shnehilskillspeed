@@ -1,0 +1,1 @@
+json.array! @sales_teams, partial: 'sales_teams/sales_team', as: :sales_team

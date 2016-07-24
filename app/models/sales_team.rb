@@ -1,0 +1,2 @@
+class SalesTeam < ApplicationRecord
+end
