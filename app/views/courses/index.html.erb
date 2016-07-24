@@ -1,0 +1,42 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Courses</h1>
+
+<div class="media">
+ <div class="media-body">
+	<table class="table table-hover">
+	  <thead>
+	    <tr>
+	      <th>Name</th>
+	      <th>Trainer</th>
+	      <th>Experience</th>
+	      <th colspan="3"></th>
+	    </tr>
+	  </thead>
+
+	  <tbody>
+	    <% @courses.each do |course| %>
+	      <tr>
+		<td><%= course.Name %></td>
+		<td><%= course.Trainer %></td>
+		<td><%= course.Experience %></td>
+		<td><%= link_to 'Show', course, class: 'btn btn-mini' %></td>
+		<td><%= link_to 'Edit', edit_course_path(course), class: 'btn btn-mini btn-success' %></td>
+		<td><%= link_to 'Destroy', course, method: :delete, class: 'btn btn-mini btn-danger', data: { confirm: 'Are you sure?' } %></td>
+	      </tr>
+	    <% end %>
+	  </tbody>
+	</table>
+   </div>
+</div>
+
+<br>
+
+
+<h3>Import Courses</h3>
+<%= form_tag import_courses_path, multipart: true do %>
+ <%= file_field_tag :file %>
+ <%= submit_tag "Upload Courses" %>
+<% end %> 
+
+<%= link_to 'New Course', new_course_path %>
